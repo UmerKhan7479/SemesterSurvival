@@ -180,8 +180,9 @@ export const generateCheatSheetContent = async (client, ignoredModelId, file) =>
     }
 
     // 2. Define Model Candidates provided by Google AI Studio
-    // Order: Experimental (2.0) -> Best/Cheapest (1.5 Flash) -> Legacy
+    // Order: User Request (Gemma 3) -> Experimental (2.0) -> Best/Cheapest (1.5 Flash) -> Legacy
     const candidates = [
+        "gemma-3-27b-it",
         "gemini-2.0-flash-exp",
         "gemini-1.5-flash",
         "gemini-1.5-flash-001",
