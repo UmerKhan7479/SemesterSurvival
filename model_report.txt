@@ -1,0 +1,8 @@
+--- MODEL CHECK START ---
+[FAIL] gemini-1.5-flash -> [GoogleGenerativeAI Error]: Error fetching from ht
+[FAIL] gemini-1.5-flash-latest -> [GoogleGenerativeAI Error]: Error fetching from ht
+[FAIL] gemini-1.5-pro -> [GoogleGenerativeAI Error]: Error fetching from ht
+[FAIL] gemini-1.5-pro-latest -> [GoogleGenerativeAI Error]: Error fetching from ht
+[FAIL] gemini-pro -> [GoogleGenerativeAI Error]: Error fetching from ht
+[FAIL] gemini-pro-vision -> [GoogleGenerativeAI Error]: Error fetching from ht
+--- MODEL CHECK END ---
