@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Lock, ArrowRight, Loader2, Github, Chrome } from 'lucide-react';
+import { Mail, Lock, ArrowRight, Loader2 } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { cn } from '../lib/utils';
 import { useUpload } from '../context/UploadContext';
@@ -15,18 +15,7 @@ const Login = () => {
     const navigate = useNavigate();
     const { login, signup, loginWithProvider } = useUpload(); // Get signup function
 
-    const handleSocialLogin = async (provider) => {
-        setIsLoading(true);
-        setError(null);
-        try {
-            await loginWithProvider(provider);
-            // OAuth redirects, so no navigate needed here usually
-        } catch (err) {
-            console.error("Social login failed:", err);
-            setError(err.message || `Failed to login with ${provider}`);
-            setIsLoading(false);
-        }
-    };
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -138,33 +127,7 @@ const Login = () => {
                         </button>
                     </form>
 
-                    {/* Divider */}
-                    <div className="relative my-8">
-                        <div className="absolute inset-0 flex items-center">
-                            <div className="w-full border-t border-white/10"></div>
-                        </div>
-                        <div className="relative flex justify-center text-sm">
-                            <span className="px-4 bg-slate-900/50 text-slate-500">Or continue with</span>
-                        </div>
-                    </div>
 
-                    {/* Social Login */}
-                    <div className="grid grid-cols-2 gap-4">
-                        <button
-                            type="button"
-                            onClick={() => handleSocialLogin('google')}
-                            className="flex items-center justify-center gap-2 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-sm font-medium transition-all"
-                        >
-                            <Chrome size={20} /> Google
-                        </button>
-                        <button
-                            type="button"
-                            onClick={() => handleSocialLogin('github')}
-                            className="flex items-center justify-center gap-2 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-sm font-medium transition-all"
-                        >
-                            <Github size={20} /> GitHub
-                        </button>
-                    </div>
 
                     {/* Footer */}
                     <p className="text-center mt-8 text-sm text-slate-400">
