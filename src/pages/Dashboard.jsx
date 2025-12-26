@@ -97,8 +97,8 @@ const Dashboard = () => {
         <div className="max-w-7xl mx-auto space-y-8">
 
             {/* Hero Section / Success Probability */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="md:col-span-2 glass-panel rounded-3xl p-8 relative overflow-hidden flex items-center justify-between">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div className="lg:col-span-2 glass-panel rounded-3xl p-8 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
                     <div className="relative z-10">
                         <h2 className="text-3xl font-bold mb-2">Semester Probability of <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Success</span></h2>
                         <p className="text-slate-400 mb-6 max-w-md">Based on your current uploads and syllabus coverage. Upload more past papers to increase accuracy.</p>
@@ -124,7 +124,7 @@ const Dashboard = () => {
                 </div>
 
                 {/* Quick Stats */}
-                <div className="space-y-6">
+                <div className="space-y-6 grid grid-cols-1 md:grid-cols-3 lg:block lg:space-y-6 md:gap-4 lg:gap-0">
                     <div className="glass-panel p-6 rounded-2xl flex items-center gap-4">
                         <div className="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center">
                             <FileText size={24} />
@@ -179,7 +179,7 @@ const Dashboard = () => {
                     />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                     <FileUpload
                         label="Syllabus"
                         icon={BookOpen}
@@ -235,7 +235,7 @@ const Dashboard = () => {
                         <FileText className="text-primary" size={24} />
                         <span>Recent Analysis History</span>
                     </h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
                         {analysisHistory.map((item) => (
                             <div
                                 key={item.id}

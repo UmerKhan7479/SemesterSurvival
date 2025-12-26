@@ -3,6 +3,7 @@ import { LayoutDashboard, FileText, Upload, Settings, Menu, LogOut, Users } from
 import { cn } from '../lib/utils';
 import { Link, useLocation } from 'react-router-dom';
 import { useUpload } from '../context/UploadContext';
+import logo from '../assets/logo.png';
 
 const Layout = ({ children }) => {
     const location = useLocation();
@@ -22,9 +23,7 @@ const Layout = ({ children }) => {
             {/* Sidebar - Desktop */}
             <aside className="hidden md:flex flex-col w-64 glass-panel m-4 rounded-2xl p-4">
                 <div className="flex items-center gap-3 px-4 py-4 mb-8">
-                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                        <span className="font-bold text-lg">S</span>
-                    </div>
+                    <img src={logo} alt="Logo" className="w-8 h-8 rounded-lg object-contain" />
                     <h1 className="font-bold text-xl tracking-tight">Semester<span className="text-primary">Survival</span></h1>
                 </div>
 
@@ -73,7 +72,7 @@ const Layout = ({ children }) => {
                 {/* Mobile Header */}
                 <div className="md:hidden flex items-center justify-between mb-6 glass-panel p-4 rounded-xl sticky top-0 z-50">
                     <div className="font-bold text-lg flex items-center gap-2">
-                        <div className="w-6 h-6 rounded bg-gradient-to-br from-primary to-accent flex items-center justify-center text-xs">S</div>
+                        <img src={logo} alt="Logo" className="w-6 h-6 rounded object-contain" />
                         SemesterSurvival
                     </div>
                     <button
